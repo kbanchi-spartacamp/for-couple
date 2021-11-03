@@ -20,3 +20,9 @@ Route::get('/', function () {
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
+Route::resource('users', App\Http\Controllers\UserController::class);
+
+Route::resource('users.husbands', App\Http\Controllers\HusbandController::class);
+
+Route::resource('users.wives', App\Http\Controllers\WifeController::class);
